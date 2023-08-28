@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scable=none">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="../dist/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Home</title>
+</head>
+
+<body id="bod">
+    <main class="container overflow-x-hidden overflow-y-hidden dark:bg-[#252525]">
+        <header class="py-5 flex items-center justify-between">
+            <img data-aos="fade-right" class="w-40" src="../assets/Home/logo.svg" alt="" data-aos="fade-right">
+           <button onclick="removeClass()" ondblclick="remove()">
+            <label data-aos="fade" class="relative inline-flex items-center cursor-pointer lg:hidden -mr-12">
+                <input  type="checkbox" value="" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-primary rounded-full dark:bg-white peer-checked:after:translate-x-full dark:after:bg-primary peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25 dark:peer-checked:bg-white"></div>
+              </label>
+           </button>
+            <buttonc class="flex flex-col items-center gap-y-[5px] lg:hidden" id="overlayToggle" data-aos="fade-left">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+            </buttonc>
+            <div id="overlayMenu"
+            class="flex min-w-full flex-col h-screen lg:hidden fixed top-0 right-[-100%] z-50 bg-[#fff] backdrop-blur-md shadow-4xl fade duration-500 transition-all dark:bg-[#252525]">
+         <div class="flex items-center">
+            <img class="absolute top-7 left-8 w-44" src="../assets/Home/logo.svg" alt="">
+            <button class="absolute top-8 right-8 "type="button" id="closeOverlayToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 stroke-primary lg:hidden"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+         </div>
+            <ul class=" text-primary text-center pt-48 gap-y-7 text-lg items-center flex-col flex font-normal cursor-pointer">   
+               <a href="#"> <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium ">Home</li>       </a>
+               <a href="#"> <li class="hover:text-primary   duration-1000 transform transition-all hover:font-medium">Blog</li> </a>
+               <a href="#"> <li class="hover:text-primary duration-1000  transform transition-all hover:font-medium">Products</li></a> 
+                <a href="#"> <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium">Shopping Card</li></a> 
+                <a href="login.html"> <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium text-white bg-primary rounded-2xl py-5 w-44">Login</li></a> 
+            </ul>
+        </div>
+            <ul class="=items-center gap-x-9 hidden lg:flex">
+                <li class="text-primary font-medium">Home</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">Products</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">About</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">Contact</li>
+            </ul>
+           <div class="hidden lg:flex items-center">
+            <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-primary rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25"></div>
+              </label>
+              
+            <a href="login.html"><div data-aos="fade-left" class="bg-[#647efe1a] p-3 rounded-2xl hidden lg:flex ">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12.75C8.83 12.75 6.25 10.17 6.25 7C6.25 3.83 8.83 1.25 12 1.25C15.17 1.25 17.75 3.83 17.75 7C17.75 10.17 15.17 12.75 12 12.75ZM12 2.75C9.66 2.75 7.75 4.66 7.75 7C7.75 9.34 9.66 11.25 12 11.25C14.34 11.25 16.25 9.34 16.25 7C16.25 4.66 14.34 2.75 12 2.75Z" fill="#8593FF"/>
+                    <path d="M20.5901 22.75C20.1801 22.75 19.8401 22.41 19.8401 22C19.8401 18.55 16.3202 15.75 12.0002 15.75C7.68015 15.75 4.16016 18.55 4.16016 22C4.16016 22.41 3.82016 22.75 3.41016 22.75C3.00016 22.75 2.66016 22.41 2.66016 22C2.66016 17.73 6.85015 14.25 12.0002 14.25C17.1502 14.25 21.3401 17.73 21.3401 22C21.3401 22.41 21.0001 22.75 20.5901 22.75Z" fill="#8593FF"/>
+                    </svg>
+                    
+             </div>   </a>                             
+           </div>
+         
+        </header>
+        <section class="flex flex-col items-center bg-gradient-to-l from-[#5B6FFF] to-primary w-full py-7 rounded-3xl lg:flex-row-reverse lg:justify-between lg:px-9 lg:py-0 lg:rounded-[50px]">
+            <img class="lg:w-[600px]" src="../assets/Home/hero.png" alt="" data-aos="fade">
+            <div class="px-6 flex flex-col items-center gap-y-4 lg:items-start lg:gap-y-7 ">
+                <h1 class="text-white font-bold text-4xl text-center lg:text-start lg:text-6xl" data-aos="fade-up">All You Need
+                    For <span class="font-light">Designing!</span></h1>
+                <input data-aos="fade-down" type="search" placeholder="Search in Products" class="focus:outline-none py-3 px-3 rounded-2xl lg:w-[370px] dark:bg-[#252525]">
+            <div class="lg:flex-row flex flex-col items-center gap-y-3 lg:gap-x-2">
+                <h1 class="flex items-center text-white gap-x-1 text-xl" data-aos="fade">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.35288 15.0496L2.6227 15.2209L3.35288 15.0496ZM3.35288 8.95043L2.6227 8.77915L3.35288 8.95043ZM20.6471 8.95044L19.9169 9.12171L20.6471 8.95044ZM20.6471 15.0496L19.9169 14.8783L20.6471 15.0496ZM15.0496 20.6471L14.8783 19.9169L15.0496 20.6471ZM8.95044 20.6471L8.77916 21.3773L8.95044 20.6471ZM8.95043 3.35288L8.77916 2.6227L8.95043 3.35288ZM15.0496 3.35288L14.8783 4.08306L15.0496 3.35288ZM4.08306 14.8783C3.63898 12.9851 3.63898 11.0149 4.08306 9.12171L2.6227 8.77915C2.12577 10.8976 2.12577 13.1024 2.6227 15.2209L4.08306 14.8783ZM19.9169 9.12171C20.361 11.0149 20.361 12.9851 19.9169 14.8783L21.3773 15.2208C21.8742 13.1024 21.8742 10.8976 21.3773 8.77916L19.9169 9.12171ZM14.8783 19.9169C12.9851 20.361 11.0149 20.361 9.12171 19.9169L8.77916 21.3773C10.8976 21.8742 13.1024 21.8742 15.2208 21.3773L14.8783 19.9169ZM9.12171 4.08306C11.0149 3.63898 12.9851 3.63898 14.8783 4.08306L15.2208 2.6227C13.1024 2.12577 10.8976 2.12577 8.77916 2.6227L9.12171 4.08306ZM9.12171 19.9169C6.62161 19.3305 4.6695 17.3784 4.08306 14.8783L2.6227 15.2209C3.33924 18.2756 5.72441 20.6608 8.77916 21.3773L9.12171 19.9169ZM15.2208 21.3773C18.2756 20.6608 20.6608 18.2756 21.3773 15.2208L19.9169 14.8783C19.3305 17.3784 17.3784 19.3305 14.8783 19.9169L15.2208 21.3773ZM14.8783 4.08306C17.3784 4.6695 19.3305 6.62161 19.9169 9.12171L21.3773 8.77916C20.6608 5.72441 18.2756 3.33924 15.2208 2.6227L14.8783 4.08306ZM8.77916 2.6227C5.72441 3.33924 3.33924 5.72441 2.6227 8.77915L4.08306 9.12171C4.6695 6.6216 6.62161 4.6695 9.12171 4.08306L8.77916 2.6227Z"
+                            fill="white" fill-opacity="0.44" />
+                        <path
+                            d="M2.6227 15.2209C2.71729 15.6241 3.12089 15.8743 3.52416 15.7798C3.92742 15.6852 4.17765 15.2816 4.08306 14.8783L2.6227 15.2209ZM3.35288 8.95043L2.6227 8.77915L3.35288 8.95043ZM20.6471 8.95044L19.9169 9.12171L20.6471 8.95044ZM20.6471 15.0496L19.9169 14.8783L20.6471 15.0496ZM14.8783 19.9169C14.475 20.0115 14.2248 20.4151 14.3194 20.8184C14.414 21.2217 14.8176 21.4719 15.2208 21.3773L14.8783 19.9169ZM8.95043 3.35288L8.77916 2.6227L8.95043 3.35288ZM15.0496 3.35288L14.8783 4.08306L15.0496 3.35288ZM4.08306 14.8783C3.63898 12.9851 3.63898 11.0149 4.08306 9.12171L2.6227 8.77915C2.12577 10.8976 2.12577 13.1024 2.6227 15.2209L4.08306 14.8783ZM19.9169 9.12171C20.361 11.0149 20.361 12.9851 19.9169 14.8783L21.3773 15.2208C21.8742 13.1024 21.8742 10.8976 21.3773 8.77916L19.9169 9.12171ZM9.12171 4.08306C11.0149 3.63898 12.9851 3.63898 14.8783 4.08306L15.2208 2.6227C13.1024 2.12577 10.8976 2.12577 8.77916 2.6227L9.12171 4.08306ZM15.2208 21.3773C18.2756 20.6608 20.6608 18.2756 21.3773 15.2208L19.9169 14.8783C19.3305 17.3784 17.3784 19.3305 14.8783 19.9169L15.2208 21.3773ZM14.8783 4.08306C17.3784 4.6695 19.3305 6.62161 19.9169 9.12171L21.3773 8.77916C20.6608 5.72441 18.2756 3.33924 15.2208 2.6227L14.8783 4.08306ZM8.77916 2.6227C5.72441 3.33924 3.33924 5.72441 2.6227 8.77915L4.08306 9.12171C4.6695 6.6216 6.62161 4.6695 9.12171 4.08306L8.77916 2.6227Z"
+                            fill="white" />
+                        <path
+                            d="M7.85741 12.2228C7.54952 12.4998 7.52457 12.9741 7.80166 13.2819C8.07875 13.5898 8.55297 13.6148 8.86085 13.3377L7.85741 12.2228ZM10.0656 11.2444L10.5674 11.8018V11.8018L10.0656 11.2444ZM11.6271 11.4406L12.2511 11.0245L12.2511 11.0245L11.6271 11.4406ZM12.3731 12.5595L11.749 12.9755L11.749 12.9755L12.3731 12.5595ZM13.9345 12.7557L14.4363 13.3131L13.9345 12.7557ZM16.1428 11.7773C16.4506 11.5002 16.4756 11.026 16.1985 10.7181C15.9214 10.4102 15.4472 10.3853 15.1393 10.6623L16.1428 11.7773ZM13.0746 13.2875L12.9812 14.0317H12.9812L13.0746 13.2875ZM10.9255 10.7125L10.832 11.4567L10.832 11.4567L10.9255 10.7125ZM8.86085 13.3377L10.5674 11.8018L9.56392 10.6869L7.85741 12.2228L8.86085 13.3377ZM11.0031 11.8566L11.749 12.9755L12.9971 12.1435L12.2511 11.0245L11.0031 11.8566ZM14.4363 13.3131L16.1428 11.7773L15.1393 10.6623L13.4328 12.1982L14.4363 13.3131ZM11.749 12.9755C11.8916 13.1894 12.0414 13.4173 12.192 13.5861C12.3567 13.7708 12.6073 13.9847 12.9812 14.0317L13.1681 12.5434C13.2271 12.5508 13.2771 12.5721 13.3101 12.5929C13.3361 12.6094 13.3373 12.6167 13.3115 12.5878C13.2857 12.5589 13.2488 12.5118 13.1934 12.4333C13.1383 12.3552 13.0763 12.2623 12.9971 12.1435L11.749 12.9755ZM13.4328 12.1982C13.3267 12.2937 13.2436 12.3684 13.1709 12.4305C13.0978 12.4929 13.0504 12.5293 13.0182 12.551C12.9862 12.5726 12.9891 12.5658 13.0184 12.5563C13.0554 12.5442 13.1092 12.536 13.1681 12.5434L12.9812 14.0317C13.355 14.0786 13.6508 13.9334 13.856 13.7952C14.0437 13.6689 14.2452 13.4851 14.4363 13.3131L13.4328 12.1982ZM10.5674 11.8018C10.6735 11.7063 10.7566 11.6316 10.8292 11.5696C10.9024 11.5072 10.9498 11.4707 10.9819 11.4491C11.014 11.4275 11.0111 11.4343 10.9818 11.4438C10.9447 11.4558 10.891 11.4641 10.832 11.4567L11.019 9.96837C10.6452 9.92141 10.3494 10.0666 10.1442 10.2048C9.9565 10.3312 9.75499 10.5149 9.56392 10.6869L10.5674 11.8018ZM12.2511 11.0245C12.1086 10.8106 11.9588 10.5828 11.8082 10.4139C11.6435 10.2292 11.3928 10.0153 11.019 9.96837L10.832 11.4567C10.7731 11.4493 10.723 11.428 10.6901 11.4071C10.664 11.3907 10.6629 11.3834 10.6886 11.4122C10.7144 11.4411 10.7514 11.4882 10.8068 11.5668C10.8619 11.6449 10.9239 11.7378 11.0031 11.8566L12.2511 11.0245Z"
+                            fill="white" fill-opacity="0.44" />
+                    </svg>
+                    Trending:
+                </h1>
+
+                <div class="flex items-center gap-x-2">
+                    <a href="#" data-aos="fade-right"
+                        class="text-white  px-2 py-1 flex items-center gap-x-1 border-white/60 border-[1px] rounded-lg">
+                        Source Code
+                        <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.31764 0.52944L4.61176 3.82356L2.9647 5.47062L1.31764 7.11768" stroke="white"
+                                stroke-opacity="0.6" stroke-width="0.988235" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1.31764 0.529404L4.61176 3.82352L2.9647 5.47058" stroke="white"
+                                stroke-width="0.988235" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </a>
+                    <a href="#" data-aos="fade-left"
+                        class="text-white px-2 py-1 flex items-center gap-x-1 border-white/60 border-[1px] rounded-lg">
+                        Figma Files
+                        <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.31764 0.52944L4.61176 3.82356L2.9647 5.47062L1.31764 7.11768" stroke="white"
+                                stroke-opacity="0.6" stroke-width="0.988235" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1.31764 0.529404L4.61176 3.82352L2.9647 5.47058" stroke="white"
+                                stroke-width="0.988235" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </a>
+                </div>
+            </div>
+     
+            </div>  
+            </section>
+        <div class="w-full flex items-center justify-center" data-aos="fade-down">
+            <svg class="w-10 mt-4 animate-pulse lg:hidden" width="94" height="47" viewBox="0 0 94 47" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4L47 42L90 4" stroke="#647CFE" stroke-width="7" stroke-linecap="round" />
+            </svg>
+        </div>
+        <h1 data-aos="zoom-out" class="text-center py-5 text-primary text-3xl font-medium lg:mt-10">Recently</h1>
+       <section class="flex flex-col items-center lg:mt-3">
+        <section class="flex flex-col gap-y-5 lg:flex-row gap-x-5">
+
+            <div  data-aos="zoom-out-up" data-aos-delay="200" class="flex flex-col gap-y-2  p-4 bg-[#008dd911] rounded-3xl dark:bg-white">
+                <img src="../assets/Home/file.png" alt="">
+                <h1 class="text-black text-2xl font-medium text-center">Hurry Pizza Ui Kit</h1>
+                <div class="flex items-center py-1 justify-between">
+                    <div class="flex items-center gap-x-2">
+                        <img src="../assets/Home/profile.svg" alt="">
+                        <h1 class="font-light text-lg">By <span class="font-medium">Pouya</span></h1>
+                    </div>
+                    <h1 class="bg-[#ce861929] text-[#CE8619] py-3 px-4 font-semibold rounded-full">Ai</h1>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <span class="text-xl">30$-50$</span>
+                    <div class="flex relative">
+                        <h1
+                            class="py-2 pr-5 pl-3 bg-primary/20 rounded-full text-primary absolute right-7 font-medium z-10">
+                            3</h1>
+                        <h1 class="py-2 px-4 bg-primary rounded-full text-white">+</h1>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="zoom-out-up" data-aos-delay="400"  class="flex flex-col gap-y-2  p-4 bg-[#ffdfe848] rounded-3xl dark:bg-white">
+                <img src="../assets/Home/Group 187.png" alt="">
+                <h1 class="text-black text-2xl font-medium text-center">Hurry Pizza Ui Kit</h1>
+                <div class="flex items-center py-1 justify-between">
+                    <div class="flex items-center gap-x-2">
+                        <img src="../assets/Home/profile.svg" alt="">
+                        <h1 class="font-light text-lg">By <span class="font-medium">Pouya</span></h1>
+                    </div>
+
+                    <h1 class="bg-[#ce861929] text-[#CE8619] py-3 px-4 font-semibold rounded-full">Ai</h1>
+
+
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <span class="text-xl">30$-50$</span>
+                    <div class="flex relative">
+                        <h1
+                            class="py-2 pr-5 pl-3 bg-primary/20 rounded-full text-primary absolute right-7 font-medium z-10">
+                            3</h1>
+                        <h1 class="py-2 px-4 bg-primary rounded-full text-white">+</h1>
+                    </div>
+                </div>
+
+
+            </div>
+            <div data-aos="zoom-out-up" data-aos-delay="600"  class="flex flex-col gap-y-2 dark:bg-white p-4 bg-[#c0562c0b] rounded-3xl">
+                <img src="../assets/Home/HurryPizza - Home (Light) -1.png" alt="">
+                <h1 class="text-black text-2xl font-medium text-center">Hurry Pizza Ui Kit</h1>
+                <div class="flex items-center py-1 justify-between">
+                    <div class="flex items-center gap-x-2">
+                        <img src="../assets/Home/profile.svg" alt="">
+                        <h1 class="font-light text-lg">By <span class="font-medium">Pouya</span></h1>
+                    </div>
+
+                    <h1 class="bg-[#ce861929] text-[#CE8619] py-3 px-4 font-semibold rounded-full">Ai</h1>
+
+
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <span class="text-xl">30$-50$</span>
+                    <div class="flex relative">
+                        <h1
+                            class="py-2 pr-5 pl-3 bg-primary/20 rounded-full text-primary absolute right-7 font-medium z-10">
+                            3</h1>
+                        <h1 class="py-2 px-4 bg-primary rounded-full text-white">+</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <button data-aos="fade" type="button" class="my-7 border-2 border-primary py-4 rounded-2xl w-full text-xl font-semibold text-primary hover:bg-primary hover:text-white transition-all transform lg:w-52">Show More</button>
+       </section>
+       <section>
+        <h1 data-aos="fade-down" class="text-center text-primary text-3xl py-10 font-medium ">Our <i>Blog</i></h1>
+        <section class="flex flex-col gap-y-9 items-center py-5 lg:flex-row lg:gap-x-7">
+            <div data-aos="fade-left" class="border-[1.5px] flex flex-col items-center gap-y-5 border-primary/30 rounded-full p-8 hover:border-b-8 hover:border-primary transition-all duration-500 hover:scale-105 dark:border-primary">
+                <img src="../assets/Home/blog.png" alt="">
+                <p class="text-center text-primary text-lg font-medium">
+                    Not only the coolest <br> but here’s the crispiest <br> part of your day
+                </p>
+               <div class="border-[1.5px] border-primary py-2 px-3 rounded-full " >
+                <svg class=""  width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.47998 16.0599L8.51998 8.99994L1.47998 1.93994" stroke="#8593FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>      
+               </div>              
+            </div>
+            <div data-aos="fade-right" class="border-[1.5px] flex flex-col items-center gap-y-5 border-primary/30 rounded-full p-8 hover:border-b-8 hover:border-primary transition-all duration-500 hover:scale-105 dark:border-primary" >
+                <img src="../assets/Home/blog.png" alt="">
+                <p class="text-center text-primary text-lg font-medium">
+                    Not only the coolest <br> but here’s the crispiest <br> part of your day
+                </p>
+               <div class="border-[1.5px] border-primary py-2 px-3 rounded-full" >
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.47998 16.0599L8.51998 8.99994L1.47998 1.93994" stroke="#8593FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>      
+               </div>              
+            </div>
+            <div data-aos="fade-left" class="border-[1.5px] flex flex-col items-center gap-y-5 border-primary/30 rounded-full p-8 hover:border-b-8 hover:border-primary transition-all duration-500 hover:scale-105 dark:border-primary">
+                <img src="../assets/Home/blog.png" alt="">
+                <p class="text-center text-primary text-lg font-medium">
+                    Not only the coolest <br> but here’s the crispiest <br> part of your day
+                </p>
+               <div class="border-[1.5px] border-primary py-2 px-3 rounded-full" >
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.47998 16.0599L8.51998 8.99994L1.47998 1.93994" stroke="#8593FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>      
+               </div>              
+            </div>
+        </section>
+       </section>
+    </main>
+    <footer class="bg-gradient-to-l  from-[#5B6FFF] to-primary w-full pb-2 h-auto pt-10 container relative">
+     <div class="flex flex-col gap-y-9 z-40 lg:flex-row lg:justify-between">
+        <div>
+            <h1 data-aos="fade-up" class="text-white font-semibold text-3xl">DEVMARKET</h1>
+            <div class="flex gap-x-4 mt-5">
+                <a href="https://enamad.ir/">
+                <img data-aos="fade" class="w-24 h-24" src="../assets/Home/namad.png" alt=""></a>
+                <img data-aos="fade" class="w-24 h-24 rounded-xl"  src="../assets/Home/namad.jpg" alt="">
+            </div>
+        </div>
+        <ul class="flex flex-col gap-y-1">
+            <li data-aos="fade" class="text-2xl text-white font-semibold">Menu</li>
+    
+<div class="lg:flex  gap-x-8">
+    <li data-aos="fade-up" class="text-[#ffffffbf]">Home</li>
+    <li data-aos="fade-up" class="text-[#ffffffbf]">Products</li>
+</div>
+<div  class="lg:flex gap-y-3 gap-x-8">
+    <li data-aos="fade-up" class="text-[#ffffffbf]">About</li>
+    <li data-aos="fade-up" class="text-[#ffffffbf]">Contact</li>
+</div>
+        </ul>
+        <div>
+            <h1 data-aos="fade" class="text-2xl text-white font-semibold">About</h1>
+            <p data-aos="fade" class="text-[#ffffffbf] text-justify lg:w-52">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod natus ab impedit nulla minima ex sit dolores iusto rerum architecto dolorem illum, deleniti quam vero. Temporibus aliquam quibusdam quia quasi.</p>
+        </div>
+     </div>
+     <h1 class="text-center text-[#ffffffbf] pt-5">All Right Reseved For Pouya | 2023</h1>
+    </footer>
+
+    <script src="../src/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        AOS.init({
+    duration: 800,
+})
+function removeClass()
+    {
+        document.getElementById('bod').classList.add('dark');
+
+    }
+    
+function remove()
+    {
+        document.getElementById('bod').classList.remove('dark');
+
+    }
+    document.querySelector("#overlayToggle").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#overlayMenu").classList.toggle("right-[-100%]");
+  document.querySelector("#overlayMenu").classList.toggle("right-0");
+});
+
+document.querySelector("#closeOverlayToggle").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#overlayMenu").classList.remove("right-0");
+  document.querySelector("#overlayMenu").classList.add("right-[-100%]");
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>the products</title>
+</head>
+
+<body>
+    <main class="container">
+        <header class="py-5 flex items-center justify-between">
+            <img data-aos="fade-right" class="w-40" src="../assets/Home/logo.svg" alt="" data-aos="fade-right">
+            <button onclick="removeClass()" ondblclick="remove()">
+                <label data-aos="fade" class="relative inline-flex items-center cursor-pointer lg:hidden -mr-12">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div
+                        class="w-11 h-6 bg-primary rounded-full dark:bg-white peer-checked:after:translate-x-full dark:after:bg-primary peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25 dark:peer-checked:bg-white">
+                    </div>
+                </label>
+            </button>
+            <buttonc class="flex flex-col items-center gap-y-[5px] lg:hidden" id="overlayToggle" data-aos="fade-left">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+            </buttonc>
+            <div id="overlayMenu"
+                class="flex min-w-full flex-col h-screen lg:hidden fixed top-0 right-[-100%] z-50 bg-[#fff] backdrop-blur-md shadow-4xl fade duration-500 transition-all dark:bg-[#252525]">
+                <div class="flex items-center">
+                    <img class="absolute top-7 left-8 w-44" src="../assets/Home/logo.svg" alt="">
+                    <button class="absolute top-8 right-8 " type="button" id="closeOverlayToggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 stroke-primary lg:hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul
+                    class=" text-primary text-center pt-48 gap-y-7 text-lg items-center flex-col flex font-normal cursor-pointer">
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium ">Home
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary   duration-1000 transform transition-all hover:font-medium">Blog
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000  transform transition-all hover:font-medium">
+                            Products</li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium">Shopping
+                            Card</li>
+                    </a>
+                    <a href="login.html">
+                        <li
+                            class="hover:text-primary duration-1000 transform transition-all hover:font-medium text-white bg-primary rounded-2xl py-5 w-44">
+                            Login</li>
+                    </a>
+                </ul>
+            </div>
+            <ul class="=items-center gap-x-9 hidden lg:flex">
+                <li class="text-primary font-medium">Home</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">
+                    Products</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">About
+                </li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">
+                    Contact</li>
+            </ul>
+            <div class="hidden lg:flex items-center">
+                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div
+                        class="w-11 h-6 bg-primary rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25">
+                    </div>
+                </label>
+
+                <a href="login.html">
+                    <div data-aos="fade-left" class="bg-[#647efe1a] p-3 rounded-2xl hidden lg:flex ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 12.75C8.83 12.75 6.25 10.17 6.25 7C6.25 3.83 8.83 1.25 12 1.25C15.17 1.25 17.75 3.83 17.75 7C17.75 10.17 15.17 12.75 12 12.75ZM12 2.75C9.66 2.75 7.75 4.66 7.75 7C7.75 9.34 9.66 11.25 12 11.25C14.34 11.25 16.25 9.34 16.25 7C16.25 4.66 14.34 2.75 12 2.75Z"
+                                fill="#8593FF" />
+                            <path
+                                d="M20.5901 22.75C20.1801 22.75 19.8401 22.41 19.8401 22C19.8401 18.55 16.3202 15.75 12.0002 15.75C7.68015 15.75 4.16016 18.55 4.16016 22C4.16016 22.41 3.82016 22.75 3.41016 22.75C3.00016 22.75 2.66016 22.41 2.66016 22C2.66016 17.73 6.85015 14.25 12.0002 14.25C17.1502 14.25 21.3401 17.73 21.3401 22C21.3401 22.41 21.0001 22.75 20.5901 22.75Z"
+                                fill="#8593FF" />
+                        </svg>
+
+                    </div>
+                </a>
+            </div>
+
+        </header>
+        <section
+            class="flex flex-col py-4 gap-y-7 border-[1.5px] p-4 rounded-lg border-primary/25 bg-primary/20  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+            <div class="flex justify-center mt-5">
+                <img data-aos="fade-right" class="w-64" src="../assets/the products/laptop.png" alt="">
+            </div>
+            <div class="flex flex-col py-4 gap-y-4 text-center">
+                <h1 data-aos="fade-left">IdeaPad 3 i3 1115G4-12GB-1TB HDD+256GB SSD</h1>
+                <h1 data-aos="fade-up" class="text-black/40">Lenovo IdeaPad 3-i3 1115G4-12GB-1TB HDD+256GB SSD-Int-Full HD 15.6 in 60Hz
+                </h1>
+            </div>
+            <div class="flex flex-col gap-y-4">
+                <label data-aos="fade-down"  for="" class="text-lg">Colors :</label>
+                <div data-aos="fade-left"  class="flex items-center">
+                    <input id="default-checkbox" type="checkbox" value=""
+                        class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="default-checkbox"
+                        class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300 text-black/40">Gray</label>
+                    <div class="bg-black/40 rounded-full w-2 h-2 p-3 ml-2">
+                        <h1 class="hidden">.</h1>
+                    </div>
+                </div>
+                <div class="flex items-center mb-4" data-aos="fade-up" >
+                    <input data-aos="fade-down"  id="default-checkbox" type="checkbox" value=""
+                        class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label data-aos="fade-right"  for="default-checkbox"
+                        class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300 text-black/40">Purpel</label>
+                    <div data-aos="fade-left"  class="bg-primary rounded-full w-2 h-2 p-3 ml-2">
+                        <h1 class="hidden">.</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-16">
+            <div data-aos="fade-left"  dir="rtl">
+                <label class="text-2xl font-bold">ویژگی‌های اصلی</label>
+            </div>
+            <div dir="rtl"
+                class=" flex flex-col border-[1.5px] p-4 rounded-lg border-[#F0B86E] shadow-[0_20px_20px_-15px_rgba(0,0,0,0.3)] mt-5 py-4 gap-y-4">
+                <h1 data-aos="fade-down" ><span class="text-black/60">ابعاد نمایشگر</span> :15.6 اینچ</h1>
+                <hr>
+                <h1 data-aos="fade-up" ><span class="text-black/60">سری پردازنده</span> :Core i3</h1>
+                <hr>
+                <h1 data-aos="fade-zoom-out" ><span class="text-black/60">ظرفیت حافظه RAM</span> :12 گیگابایت</h1>
+                <hr>
+                <h1 data-aos="fade-right" ><span class="text-black/60">ابعاد نمایشگر</span> :Intel</h1>
+                <hr>
+                <h1 data-aos="fade-left" ><span class="text-black/60">ابعاد نمایشگر</span> : 1 ترابایت + 256 گیگابایت</h1>
+            </div>
+        </section>
+        <section data-aos="fade-up"  class="overflow-x-scroll w-full mt-9 flex gap-x-5 h-auto">
+            <img class="bg-primary/20 p-5 rounded-3xl" src="../assets/the products/Group 2.png" alt="">
+            <img class="bg-primary/20 p-5 rounded-3xl" src="../assets/the products/Group 2.png" alt="">
+            <img class="bg-primary/20 p-5 rounded-3xl" src="../assets/the products/Group 2.png" alt="">
+            <img class="bg-primary/20 p-5 rounded-3xl" src="../assets/the products/Group 2.png" alt="">
+            </sectin>
+    </main>
+    <footer data-aos="fade-right"  class="bg-gradient-to-l  from-[#5B6FFF] to-primary w-full pb-2 h-auto pt-10 container mt-10">
+        <div class="flex flex-col gap-y-9 z-40 lg:flex-row lg:justify-between">
+            <div>
+                <h1 data-aos="fade-up" class="text-white font-semibold text-3xl">DEVMARKET</h1>
+                <div class="flex gap-x-4 mt-5">
+                    <a href="https://enamad.ir/">
+                        <img data-aos="fade" class="w-24 h-24" src="../assets/Home/namad.png" alt=""></a>
+                    <img data-aos="fade" class="w-24 h-24 rounded-xl" src="../assets/Home/namad.jpg" alt="">
+                </div>
+            </div>
+            <ul class="flex flex-col gap-y-1">
+                <li data-aos="fade" class="text-2xl text-white font-semibold">Menu</li>
+
+                <div class="lg:flex  gap-x-8">
+                    <li data-aos="fade-up" class="text-[#ffffffbf]">Home</li>
+                    <li data-aos="fade-up" class="text-[#ffffffbf]">Products</li>
+                </div>
+                <div class="lg:flex gap-y-3 gap-x-8">
+                    <li data-aos="fade-up" class="text-[#ffffffbf]">About</li>
+                    <li data-aos="fade-up" class="text-[#ffffffbf]">Contact</li>
+                </div>
+            </ul>
+            <div>
+                <h1 data-aos="fade" class="text-2xl text-white font-semibold">About</h1>
+                <p data-aos="fade" class="text-[#ffffffbf] text-justify lg:w-52">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quod natus ab impedit nulla minima ex sit dolores iusto rerum architecto dolorem
+                    illum, deleniti quam vero. Temporibus aliquam quibusdam quia quasi.</p>
+            </div>
+        </div>
+        <h1 class="text-center text-[#ffffffbf] pt-5">All Right Reseved For Pouya | 2023</h1>
+    </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+    })
+</script>
+
+</html>
