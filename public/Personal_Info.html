@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Personal Info</title>
+</head>
+
+<body>
+    <main class="container">
+        <header class="py-5 flex items-center justify-between">
+            <img data-aos="fade-right" class="w-40" src="../assets/Home/logo.svg" alt="" data-aos="fade-right">
+            <button onclick="removeClass()" ondblclick="remove()">
+                <label data-aos="fade" class="relative inline-flex items-center cursor-pointer lg:hidden -mr-12">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div
+                        class="w-11 h-6 bg-primary rounded-full dark:bg-white peer-checked:after:translate-x-full dark:after:bg-primary peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25 dark:peer-checked:bg-white">
+                    </div>
+                </label>
+            </button>
+            <buttonc class="flex flex-col items-center gap-y-[5px] lg:hidden" id="overlayToggle" data-aos="fade-left">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+                <hr class="w-9 h-[5px] bg-primary border-none rounded-full">
+            </buttonc>
+            <div id="overlayMenu"
+                class="flex min-w-full flex-col h-screen lg:hidden fixed top-0 right-[-100%] z-50 bg-[#fff] backdrop-blur-md shadow-4xl fade duration-500 transition-all dark:bg-[#252525]">
+                <div class="flex items-center">
+                    <img class="absolute top-7 left-8 w-44" src="../assets/Home/logo.svg" alt="">
+                    <button class="absolute top-8 right-8 " type="button" id="closeOverlayToggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 stroke-primary lg:hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul
+                    class=" text-primary text-center pt-48 gap-y-7 text-lg items-center flex-col flex font-normal cursor-pointer">
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium ">Home
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary   duration-1000 transform transition-all hover:font-medium">Blog
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000  transform transition-all hover:font-medium">
+                            Products</li>
+                    </a>
+                    <a href="#">
+                        <li class="hover:text-primary duration-1000 transform transition-all hover:font-medium">Shopping
+                            Card</li>
+                    </a>
+                    <a href="login.html">
+                        <li
+                            class="hover:text-primary duration-1000 transform transition-all hover:font-medium text-white bg-primary rounded-2xl py-5 w-44">
+                            Login</li>
+                    </a>
+                </ul>
+            </div>
+            <ul class="=items-center gap-x-9 hidden lg:flex">
+                <li class="text-primary font-medium">Home</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">
+                    Products</li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">About
+                </li>
+                <li class="hover:text-primary hover:font-medium hover:cursor-pointer duration-700 transition-all">
+                    Contact</li>
+            </ul>
+            <div class="hidden lg:flex items-center">
+                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div
+                        class="w-11 h-6 bg-primary rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-primary after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-primary peer-checked:bg-black/25">
+                    </div>
+                </label>
+
+                <a href="login.html">
+                    <div data-aos="fade-left" class="bg-[#647efe1a] p-3 rounded-2xl hidden lg:flex ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 12.75C8.83 12.75 6.25 10.17 6.25 7C6.25 3.83 8.83 1.25 12 1.25C15.17 1.25 17.75 3.83 17.75 7C17.75 10.17 15.17 12.75 12 12.75ZM12 2.75C9.66 2.75 7.75 4.66 7.75 7C7.75 9.34 9.66 11.25 12 11.25C14.34 11.25 16.25 9.34 16.25 7C16.25 4.66 14.34 2.75 12 2.75Z"
+                                fill="#8593FF" />
+                            <path
+                                d="M20.5901 22.75C20.1801 22.75 19.8401 22.41 19.8401 22C19.8401 18.55 16.3202 15.75 12.0002 15.75C7.68015 15.75 4.16016 18.55 4.16016 22C4.16016 22.41 3.82016 22.75 3.41016 22.75C3.00016 22.75 2.66016 22.41 2.66016 22C2.66016 17.73 6.85015 14.25 12.0002 14.25C17.1502 14.25 21.3401 17.73 21.3401 22C21.3401 22.41 21.0001 22.75 20.5901 22.75Z"
+                                fill="#8593FF" />
+                        </svg>
+
+                    </div>
+                </a>
+            </div>
+        </header>
+        <section class="lg:flex lg:flex-row-reverse lg:gap-x-24 lg:justify-center">
+            <section class="bg-[#8593ff1c] rounded-xl p-5 flex flex-col gap-y-5 mt-10 lg:w-[400px]">
+                <div data-aos="fade-left" class="flex justify-between">
+                    <h1 class="text-[#8593FF] text-2xl font-bold">Basket</h1>
+                    <h1 class="bg-[#FF7FC2] rounded-full px-3 text-white text-lg">3</h1>
+                </div>
+                <div class="bg-white rounded-2xl p-2 flex items-center gap-x-3">
+                    <img data-aos="fade-right" class="bg-[#FFDFE8] p-1 rounded-2xl w-16 h-16"
+                        src="../assets/personal info/Female Cycling Colorful 4@2x 2.png" alt="">
+                    <div class="flex flex-col gap-y-2">
+                        <h1 class="text-[#8593FF] text-xl font-bold"> Hurry Pizza Ui Kit</h1>
+                        <div class="flex justify-between">
+                            <h1 data-aos="fade-down">Price: <span class="font-light">99.99$</span></h1>
+                            <div data-aos="fade-right" class="flex items-center gap-x-3">
+                                <div data-aos="fade-up" class="bg-[#8593ff46] rounded-full py-1 px-1">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.0154 10.4665C11.4149 10.4073 11.9295 10.3957 12.6359 10.3937C12.1334 11.6119 11.0705 12.5318 9.76155 12.8389L9.75856 12.8396C9.76508 12.3314 9.78329 11.9395 9.83304 11.6229C9.89811 11.2088 10.0094 10.98 10.1756 10.8138C10.3457 10.6437 10.5816 10.5309 11.0154 10.4665ZM9.98017 2.22913C8.67773 1.92362 7.32227 1.92362 6.01983 2.22913C4.13894 2.67033 2.67033 4.13894 2.22913 6.01983C1.92362 7.32227 1.92362 8.67773 2.22913 9.98017C2.67033 11.8611 4.13895 13.3297 6.01983 13.7709C7.11379 14.0275 8.24516 14.0686 9.35109 13.8941C9.56185 13.8608 9.77169 13.8198 9.98017 13.7709C11.8611 13.3297 13.3297 11.8611 13.7709 9.98017C14.0764 8.67773 14.0764 7.32227 13.7709 6.01983C13.3297 4.13894 11.8611 2.67033 9.98017 2.22913ZM5.7025 6.08541C5.7025 5.87393 5.87393 5.7025 6.08541 5.7025H7.99998C8.21146 5.7025 8.3829 5.87393 8.3829 6.08541C8.3829 6.29689 8.21146 6.46832 7.99998 6.46832H6.08541C5.87393 6.46832 5.7025 6.29689 5.7025 6.08541ZM5.7025 7.99998C5.7025 7.7885 5.87393 7.61707 6.08541 7.61707H9.27636C9.48784 7.61707 9.65928 7.7885 9.65928 7.99998C9.65928 8.21146 9.48784 8.3829 9.27636 8.3829H6.08541C5.87393 8.3829 5.7025 8.21146 5.7025 7.99998Z"
+                                            fill="#6879FF" />
+                                    </svg>
+                                </div>
+                                <div data-aos="fade-left" class="bg-[#ff7ec344] rounded-full py-1.5 px-1.5">
+                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7 0C6.51326 0 6.03009 0.0796704 5.57759 0.235538C5.12507 0.391414 4.71011 0.621158 4.35777 0.914164C4.00531 1.20727 3.72187 1.55848 3.52709 1.94953C3.40935 2.18591 3.32572 2.43345 3.27796 2.68671H0.538462C0.241077 2.68671 0 2.91225 0 3.19047C0 3.46869 0.241077 3.69423 0.538462 3.69423H1.4359V6.61716C1.4359 7.71417 1.60221 8.80562 1.92986 9.85893C2.41986 11.4341 3.83058 12.6077 5.56 12.8789L5.67325 12.8967C6.55161 13.0344 7.44836 13.0344 8.32673 12.8967L8.44 12.8789C10.1694 12.6077 11.5801 11.4341 12.0701 9.85895C12.3978 8.80563 12.5641 7.71416 12.5641 6.61714V3.69423H13.4615C13.7589 3.69423 14 3.46869 14 3.19047C14 2.91225 13.7589 2.68671 13.4615 2.68671H10.722C10.6743 2.43345 10.5906 2.18591 10.4729 1.94953C10.2781 1.55848 9.99469 1.20727 9.64223 0.914165C9.28989 0.621158 8.87493 0.391414 8.42241 0.235539C7.96991 0.0796706 7.48674 0 7 0ZM5.94968 1.18101C6.28114 1.06683 6.6382 1.00752 7 1.00752C7.3618 1.00752 7.71887 1.06683 8.05032 1.18101C8.38175 1.29517 8.6791 1.46123 8.92676 1.66719C9.17431 1.87305 9.36683 2.1142 9.49677 2.37509C9.54743 2.4768 9.58833 2.58097 9.61937 2.68671L4.38063 2.68671C4.41167 2.58097 4.45257 2.4768 4.50323 2.37509C4.63317 2.1142 4.82569 1.87305 5.07324 1.66719C5.32091 1.46123 5.61826 1.29517 5.94968 1.18101ZM5.5641 6.0451C5.86149 6.0451 6.10256 6.27064 6.10256 6.54886V9.23557C6.10256 9.51379 5.86149 9.73933 5.5641 9.73933C5.26672 9.73933 5.02564 9.51379 5.02564 9.23557V6.54886C5.02564 6.27064 5.26672 6.0451 5.5641 6.0451ZM8.4359 6.0451C8.73328 6.0451 8.97436 6.27064 8.97436 6.54886V9.23557C8.97436 9.51379 8.73328 9.73933 8.4359 9.73933C8.13851 9.73933 7.89744 9.51379 7.89744 9.23557V6.54886C7.89744 6.27064 8.13851 6.0451 8.4359 6.0451Z"
+                                            fill="#EF387A" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-2 flex items-center gap-x-3">
+                    <img data-aos="fade-right" class="bg-[#D9D9D9] rounded-2xl w-16 h-16" src="../assets/personal info/London 2.png" alt="">
+                    <div class="flex flex-col gap-y-2">
+                        <h1 data-aos="fade-down" class="text-[#8593FF] text-xl font-bold"> Hurry Pizza Ui Kit</h1>
+                        <div class="flex justify-between">
+                            <h1 data-aos="fade-right">Price: <span class="font-light">99.99$</span></h1>
+                            <div class="flex items-center gap-x-3">
+                                <div data-aos="fade-left" class="bg-[#8593ff46] rounded-full py-1 px-1">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.0154 10.4665C11.4149 10.4073 11.9295 10.3957 12.6359 10.3937C12.1334 11.6119 11.0705 12.5318 9.76155 12.8389L9.75856 12.8396C9.76508 12.3314 9.78329 11.9395 9.83304 11.6229C9.89811 11.2088 10.0094 10.98 10.1756 10.8138C10.3457 10.6437 10.5816 10.5309 11.0154 10.4665ZM9.98017 2.22913C8.67773 1.92362 7.32227 1.92362 6.01983 2.22913C4.13894 2.67033 2.67033 4.13894 2.22913 6.01983C1.92362 7.32227 1.92362 8.67773 2.22913 9.98017C2.67033 11.8611 4.13895 13.3297 6.01983 13.7709C7.11379 14.0275 8.24516 14.0686 9.35109 13.8941C9.56185 13.8608 9.77169 13.8198 9.98017 13.7709C11.8611 13.3297 13.3297 11.8611 13.7709 9.98017C14.0764 8.67773 14.0764 7.32227 13.7709 6.01983C13.3297 4.13894 11.8611 2.67033 9.98017 2.22913ZM5.7025 6.08541C5.7025 5.87393 5.87393 5.7025 6.08541 5.7025H7.99998C8.21146 5.7025 8.3829 5.87393 8.3829 6.08541C8.3829 6.29689 8.21146 6.46832 7.99998 6.46832H6.08541C5.87393 6.46832 5.7025 6.29689 5.7025 6.08541ZM5.7025 7.99998C5.7025 7.7885 5.87393 7.61707 6.08541 7.61707H9.27636C9.48784 7.61707 9.65928 7.7885 9.65928 7.99998C9.65928 8.21146 9.48784 8.3829 9.27636 8.3829H6.08541C5.87393 8.3829 5.7025 8.21146 5.7025 7.99998Z"
+                                            fill="#6879FF" />
+                                    </svg>
+                                </div>
+                                <div data-aos="fade-zoom-out" class="bg-[#ff7ec344] rounded-full py-1.5 px-1.5">
+                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7 0C6.51326 0 6.03009 0.0796704 5.57759 0.235538C5.12507 0.391414 4.71011 0.621158 4.35777 0.914164C4.00531 1.20727 3.72187 1.55848 3.52709 1.94953C3.40935 2.18591 3.32572 2.43345 3.27796 2.68671H0.538462C0.241077 2.68671 0 2.91225 0 3.19047C0 3.46869 0.241077 3.69423 0.538462 3.69423H1.4359V6.61716C1.4359 7.71417 1.60221 8.80562 1.92986 9.85893C2.41986 11.4341 3.83058 12.6077 5.56 12.8789L5.67325 12.8967C6.55161 13.0344 7.44836 13.0344 8.32673 12.8967L8.44 12.8789C10.1694 12.6077 11.5801 11.4341 12.0701 9.85895C12.3978 8.80563 12.5641 7.71416 12.5641 6.61714V3.69423H13.4615C13.7589 3.69423 14 3.46869 14 3.19047C14 2.91225 13.7589 2.68671 13.4615 2.68671H10.722C10.6743 2.43345 10.5906 2.18591 10.4729 1.94953C10.2781 1.55848 9.99469 1.20727 9.64223 0.914165C9.28989 0.621158 8.87493 0.391414 8.42241 0.235539C7.96991 0.0796706 7.48674 0 7 0ZM5.94968 1.18101C6.28114 1.06683 6.6382 1.00752 7 1.00752C7.3618 1.00752 7.71887 1.06683 8.05032 1.18101C8.38175 1.29517 8.6791 1.46123 8.92676 1.66719C9.17431 1.87305 9.36683 2.1142 9.49677 2.37509C9.54743 2.4768 9.58833 2.58097 9.61937 2.68671L4.38063 2.68671C4.41167 2.58097 4.45257 2.4768 4.50323 2.37509C4.63317 2.1142 4.82569 1.87305 5.07324 1.66719C5.32091 1.46123 5.61826 1.29517 5.94968 1.18101ZM5.5641 6.0451C5.86149 6.0451 6.10256 6.27064 6.10256 6.54886V9.23557C6.10256 9.51379 5.86149 9.73933 5.5641 9.73933C5.26672 9.73933 5.02564 9.51379 5.02564 9.23557V6.54886C5.02564 6.27064 5.26672 6.0451 5.5641 6.0451ZM8.4359 6.0451C8.73328 6.0451 8.97436 6.27064 8.97436 6.54886V9.23557C8.97436 9.51379 8.73328 9.73933 8.4359 9.73933C8.13851 9.73933 7.89744 9.51379 7.89744 9.23557V6.54886C7.89744 6.27064 8.13851 6.0451 8.4359 6.0451Z"
+                                            fill="#EF387A" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-2 flex items-center gap-x-3">
+                    <img data-aos="fade-left" class="bg-[#A5F4FF] p-1 rounded-2xl w-16 h-16" src="../assets/personal info/14 2.png" alt="">
+                    <div class="flex flex-col gap-y-2">
+                        <h1 data-aos="fade-right" class="text-[#8593FF] text-xl font-bold"> Hurry Pizza Ui Kit</h1>
+                        <div class="flex justify-between">
+                            <h1 data-aos="fade-down">Price: <span class="font-light">99.99$</span></h1>
+                            <div class="flex items-center gap-x-3">
+                                <div data-aos="fade-down" class="bg-[#8593ff46] rounded-full py-1 px-1">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.0154 10.4665C11.4149 10.4073 11.9295 10.3957 12.6359 10.3937C12.1334 11.6119 11.0705 12.5318 9.76155 12.8389L9.75856 12.8396C9.76508 12.3314 9.78329 11.9395 9.83304 11.6229C9.89811 11.2088 10.0094 10.98 10.1756 10.8138C10.3457 10.6437 10.5816 10.5309 11.0154 10.4665ZM9.98017 2.22913C8.67773 1.92362 7.32227 1.92362 6.01983 2.22913C4.13894 2.67033 2.67033 4.13894 2.22913 6.01983C1.92362 7.32227 1.92362 8.67773 2.22913 9.98017C2.67033 11.8611 4.13895 13.3297 6.01983 13.7709C7.11379 14.0275 8.24516 14.0686 9.35109 13.8941C9.56185 13.8608 9.77169 13.8198 9.98017 13.7709C11.8611 13.3297 13.3297 11.8611 13.7709 9.98017C14.0764 8.67773 14.0764 7.32227 13.7709 6.01983C13.3297 4.13894 11.8611 2.67033 9.98017 2.22913ZM5.7025 6.08541C5.7025 5.87393 5.87393 5.7025 6.08541 5.7025H7.99998C8.21146 5.7025 8.3829 5.87393 8.3829 6.08541C8.3829 6.29689 8.21146 6.46832 7.99998 6.46832H6.08541C5.87393 6.46832 5.7025 6.29689 5.7025 6.08541ZM5.7025 7.99998C5.7025 7.7885 5.87393 7.61707 6.08541 7.61707H9.27636C9.48784 7.61707 9.65928 7.7885 9.65928 7.99998C9.65928 8.21146 9.48784 8.3829 9.27636 8.3829H6.08541C5.87393 8.3829 5.7025 8.21146 5.7025 7.99998Z"
+                                            fill="#6879FF" />
+                                    </svg>
+                                </div>
+                                <div data-aos="fade-left" class="bg-[#ff7ec344] rounded-full py-1.5 px-1.5">
+                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7 0C6.51326 0 6.03009 0.0796704 5.57759 0.235538C5.12507 0.391414 4.71011 0.621158 4.35777 0.914164C4.00531 1.20727 3.72187 1.55848 3.52709 1.94953C3.40935 2.18591 3.32572 2.43345 3.27796 2.68671H0.538462C0.241077 2.68671 0 2.91225 0 3.19047C0 3.46869 0.241077 3.69423 0.538462 3.69423H1.4359V6.61716C1.4359 7.71417 1.60221 8.80562 1.92986 9.85893C2.41986 11.4341 3.83058 12.6077 5.56 12.8789L5.67325 12.8967C6.55161 13.0344 7.44836 13.0344 8.32673 12.8967L8.44 12.8789C10.1694 12.6077 11.5801 11.4341 12.0701 9.85895C12.3978 8.80563 12.5641 7.71416 12.5641 6.61714V3.69423H13.4615C13.7589 3.69423 14 3.46869 14 3.19047C14 2.91225 13.7589 2.68671 13.4615 2.68671H10.722C10.6743 2.43345 10.5906 2.18591 10.4729 1.94953C10.2781 1.55848 9.99469 1.20727 9.64223 0.914165C9.28989 0.621158 8.87493 0.391414 8.42241 0.235539C7.96991 0.0796706 7.48674 0 7 0ZM5.94968 1.18101C6.28114 1.06683 6.6382 1.00752 7 1.00752C7.3618 1.00752 7.71887 1.06683 8.05032 1.18101C8.38175 1.29517 8.6791 1.46123 8.92676 1.66719C9.17431 1.87305 9.36683 2.1142 9.49677 2.37509C9.54743 2.4768 9.58833 2.58097 9.61937 2.68671L4.38063 2.68671C4.41167 2.58097 4.45257 2.4768 4.50323 2.37509C4.63317 2.1142 4.82569 1.87305 5.07324 1.66719C5.32091 1.46123 5.61826 1.29517 5.94968 1.18101ZM5.5641 6.0451C5.86149 6.0451 6.10256 6.27064 6.10256 6.54886V9.23557C6.10256 9.51379 5.86149 9.73933 5.5641 9.73933C5.26672 9.73933 5.02564 9.51379 5.02564 9.23557V6.54886C5.02564 6.27064 5.26672 6.0451 5.5641 6.0451ZM8.4359 6.0451C8.73328 6.0451 8.97436 6.27064 8.97436 6.54886V9.23557C8.97436 9.51379 8.73328 9.73933 8.4359 9.73933C8.13851 9.73933 7.89744 9.51379 7.89744 9.23557V6.54886C7.89744 6.27064 8.13851 6.0451 8.4359 6.0451Z"
+                                            fill="#EF387A" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col mt-7 gap-y-2">
+                    <div data-aos="fade-right" class="flex justify-between items-center">
+                        <h1 class="text-[#8593FF]">Subtotal</h1>
+                        <h1 class="text-[#8593FF] font-bold">299.97$</h1>
+                    </div>
+                    <div data-aos="fade-left" class="flex justify-between items-center">
+                        <h1 class="text-[#8593FF]">Discount</h1>
+                        <h1 class="text-[#8593FF] font-bold">10$</h1>
+                    </div>
+                    <hr class="text-[#cbd1ffd7]">
+                    <div data-aos="fade-right" class="flex justify-between items-center">
+                        <h1 class="text-[#8593FF]">Total</h1>
+                        <h1 class="text-[#8593FF] font-bold">289.97$</h1>
+                    </div>
+                    <button data-aos="fade-left" class="w-full bg-primary rounded-lg text-white font-bold text-xl py-3 mt-10">Go to
+                        Pay</button>
+                </div>
+            </section>
+            <section class="bg-[#FAABD714] p-6 mt-12 rounded-2xl  lg:w-[700px] lg:justify-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-[#7078AF] text-xl font-bold">Personal <span
+                            class="text-[#8593FF] font-light">Info</span>
+                    </h1>
+                </div>
+                <section class="lg:flex lg:gap-x-10">
+                    <div class="lg:flex lg:flex-col">
+                        <div class="flex items-center border-[1.5px] border-primary/30 p-5 gap-x-4 rounded-2xl mt-8">
+                            <div data-aos="fade-zoom-out" class="flex flex-col items-start">
+                                <label class="text-primary text-xs">Fullname</label>
+                                <input class="w-full focus:outline-none text-primary font-medium bg-[#faabd604]"
+                                    type="text" name="" id="">
+                            </div>
+                            <svg data-aos="fade-left" width="21" height="24" viewBox="0 0 24 27" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10 0C9.44772 0 9 0.447715 9 1V2H8C7.08264 2 6.30954 2.61762 6.07383 3.45972C1.21097 4.49467 0 7.52779 0 15C0 24.882 2.118 27 12 27C21.882 27 24 24.882 24 15C24 7.52779 22.789 4.49467 17.9262 3.45972C17.6905 2.61762 16.9174 2 16 2H15V1C15 0.447715 14.5523 0 14 0C13.4477 0 13 0.447715 13 1V2H11V1C11 0.447715 10.5523 0 10 0ZM7 20C6.44772 20 6 20.4477 6 21C6 21.5523 6.44771 22 7 22H17C17.5523 22 18 21.5523 18 21C18 20.4477 17.5523 20 17 20H7ZM6 16C6 15.4477 6.44772 15 7 15H17C17.5523 15 18 15.4477 18 16C18 16.5523 17.5523 17 17 17H7C6.44771 17 6 16.5523 6 16ZM7 12C6.44772 12 6 11.5523 6 11C6 10.4477 6.44771 10 7 10H17C17.5523 10 18 10.4477 18 11C18 11.5523 17.5523 12 17 12H7Z"
+                                    fill="#7B88E2" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center border-[1.5px] border-[#F5708885] p-5 gap-x-4 rounded-2xl mt-8">
+                            <div data-aos="fade-zoom-out" class="flex flex-col items-start">
+                                <label class="text-[#F57088A8] text-xs">Phone Number</label>
+                                <input class="w-full focus:outline-none text-[#F57088A8] font-medium bg-[#faabd604]"
+                                    type="text" name="" id="">
+                            </div>
+                            <svg data-aos="fade-right" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.0052 16.4913C14.1695 16.1446 13.3587 15.6865 12.5854 15.1418C11.8121 14.597 10.4252 13.2534 9.54068 12.1958C8.74365 11.1683 8.08258 10.054 7.61982 8.91502C7.43441 8.41842 7.95037 7.63845 8.34297 7.04496C8.44954 6.88386 8.54702 6.73649 8.61892 6.61227L8.64045 6.57449C8.95946 6.01483 9.31356 5.39362 9.14279 4.60664C8.99311 3.8762 6.98494 1.4125 6.28645 0.731574C5.82494 0.285878 5.35097 0.0506502 4.88946 0.00112969C3.03097 -0.0607732 0.923011 2.44007 0.661076 2.89814C0.224517 3.50478 0 4.21047 0 5.00281C0 5.80754 0.224517 6.71131 0.686022 7.68936C1.65892 10.0045 3.72946 12.8644 6.18666 15.5262C6.66249 16.0746 8.33451 17.7169 9.20519 18.4969C11.6374 20.6758 14.157 22.471 16.265 23.3252C18.2357 24.2166 19.8697 24.229 21.0921 23.3376C21.6658 22.991 24.0731 20.973 23.9983 19.1778C23.9609 18.695 23.7114 18.2245 23.2624 17.7788C22.5764 17.0855 20.0942 15.1294 19.3708 14.9808C18.5655 14.8113 17.9393 15.163 17.3753 15.4797L17.3377 15.5008C17.2229 15.5677 17.0867 15.6568 16.9371 15.7547C16.3384 16.1465 15.5241 16.6794 15.0052 16.4913Z"
+                                    fill="#F57088" />
+                                <path
+                                    d="M22 13C22.5523 13 23 12.5523 23 12C23 8.77275 21.9199 6.00567 19.9571 4.04289C17.9943 2.08011 15.2272 1 12 1C11.4477 1 11 1.44771 11 2C11 2.55228 11.4477 3 12 3C14.7728 3 17.0057 3.91989 18.5429 5.45711C20.0801 6.99433 21 9.22725 21 12C21 12.5523 21.4477 13 22 13Z"
+                                    fill="#F57088" />
+                                <path
+                                    d="M18 13C18.5523 13 19 12.5523 19 12C19 7.94772 16.0523 5 12 5C11.4477 5 11 5.44771 11 6C11 6.55228 11.4477 7 12 7C14.9477 7 17 9.05228 17 12C17 12.5523 17.4477 13 18 13Z"
+                                    fill="#F57088" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="lg:flex lg:flex-col">
+                        <div class="flex items-center border-[1.5px] border-[#119B8B42] p-5 gap-x-4 rounded-2xl mt-8">
+                            <div data-aos="fade-right" class="flex flex-col items-start">
+                                <label class="text-[#168E968F] text-xs">Email Address</label>
+                                <input class="w-full focus:outline-none text-[#168E968F] font-medium bg-[#faabd604]"
+                                    type="text" name="" id="">
+                            </div>
+                            <svg data-aos="fade-down" width="24" height="22" viewBox="0 0 24 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 11C0 20.0585 2.118 22 12 22C21.882 22 24 20.0585 24 11C24 8.5104 23.84 6.55838 23.4028 5.03651C22.2835 6.15874 20.8709 7.50823 19.3367 8.71025C17.1608 10.4151 14.5255 12 12 12C9.47452 12 6.83922 10.4151 4.66327 8.71025C3.12906 7.50823 1.71653 6.15874 0.597155 5.0365C0.159982 6.55838 0 8.5104 0 11ZM8 15C7.44772 15 7 15.4477 7 16C7 16.5523 7.44772 17 8 17H16C16.5523 17 17 16.5523 17 16C17 15.4477 16.5523 15 16 15H8Z"
+                                    fill="#21BBC5" />
+                                <path
+                                    d="M18.1033 7.1359C19.8054 5.80233 21.3596 4.26731 22.5313 3.07311C20.9431 0.672599 17.8164 0 12 0C6.1836 0 3.0569 0.672599 1.46866 3.07311C2.64042 4.26731 4.1946 5.80233 5.89673 7.1359C8.04078 8.81572 10.2055 10 12 10C13.7945 10 15.9592 8.81572 18.1033 7.1359Z"
+                                    fill="#21BBC5" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center border-[1.5px] border-primary/30 p-5 gap-x-4 rounded-2xl mt-8">
+                            <div data-aos="fade-up" class="flex flex-col items-start">
+                                <label class="text-primary text-xs">Social Username</label>
+                                <input class="w-full focus:outline-none text-primary font-medium bg-[#faabd604]"
+                                    type="text" name="" id="">
+                            </div>
+                            <svg data-aos="fade-right" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 0C21.882 0 24 1.77781 24 10.6667C24 16.4445 23.0002 20 18.5002 20C16.0954 20 15.3801 21.1424 14.714 22.2061C14.1336 23.1329 13.5906 24 12.0002 24C10.41 24 9.86699 23.1329 9.28663 22.2061C8.62048 21.1424 7.9051 20 5.50024 20C1.00024 20 0 16.3307 0 10.6667C0 1.88267 2.118 0 12 0ZM11 8C11 7.44772 10.5523 7 10 7H7C6.44772 7 6 7.44772 6 8C6 8.55228 6.44772 9 7 9H10C10.5523 9 11 8.55228 11 8ZM17 11C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12C6 11.4477 6.44771 11 7 11H17Z"
+                                    fill="#7B88E2" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </section>
+                <h1 data-aos="fade-left" class="text-[#7078AF] text-xl font-bold mt-5">Purchase<span
+                        class="text-[#8593FF] font-light">Info</span>
+                    <div class="">
+                        <div class="mt-10 flex flex-col gap-y-5 lg:flex lg:gap-x-4 lg:flex-row">
+                            <div>
+                                <h1 data-aos="fade-right" class="text-[#7078AF] border-[1.5px] text-center border-[#7078AF73] p-4 rounded-xl">
+                                    Pay
+                                    With
+                                    Crypto</h1>
+                            </div>
+                            <div>
+                                <h1 data-aos="fade-left"
+                                    class="text-[#7078AF] border-[1.5px] text-center border-[#7078AF73] p-4 rounded-xl flex items-center gap-x-4">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9" cy="9" r="5" fill="#FF75C0" />
+                                        <circle cx="9" cy="9" r="8.5" stroke="#FF75C0" stroke-opacity="0.4" />
+                                    </svg>Pay With Crypto
+                                </h1>
+                            </div>
+                            <div>
+                                <h1 data-aos="fade-down" class="text-[#7078AF] border-[1.5px] text-center border-[#7078AF73] p-4 rounded-xl">
+                                    Visa
+                                    Card</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center border-[1.5px] border-[#119B8B42] p-5 gap-x-4 rounded-2xl mt-10">
+                        <div data-aos="fade-left" class="flex flex-col items-start">
+                            <label class="text-#6E76AE text-xs">Extra Detail</label>
+                            <input class="w-full focus:outline-none text-primary font-medium bg-[#faabd604]" type="text"
+                                name="" id="">
+                        </div>
+                    </div>
+                    <button data-aos="fade-zoom-out" class="bg-primary rounded-xl p-4 text-white text-center text-base w-32 mt-10">Save
+                        Detail</button>
+            </section>
+        </section>
+    </main>
+</body>
+<footer class="bg-gradient-to-l  from-[#5B6FFF] to-primary w-full pb-2 h-auto pt-10 container lg:mt-11">
+    <div class="flex flex-col gap-y-9 z-40 lg:flex-row lg:justify-between">
+       <div>
+           <h1 data-aos="fade-up" class="text-white font-semibold text-3xl">DEVMARKET</h1>
+           <div class="flex gap-x-4 mt-5">
+               <a href="https://enamad.ir/">
+               <img data-aos="fade" class="w-24 h-24" src="../assets/Home/namad.png" alt=""></a>
+               <img data-aos="fade" class="w-24 h-24 rounded-xl"  src="../assets/Home/namad.jpg" alt="">
+           </div>
+       </div>
+       <ul class="flex flex-col gap-y-1">
+           <li data-aos="fade" class="text-2xl text-white font-semibold">Menu</li>
+   
+<div class="lg:flex  gap-x-8">
+   <li data-aos="fade-up" class="text-[#ffffffbf]">Home</li>
+   <li data-aos="fade-up" class="text-[#ffffffbf]">Products</li>
+</div>
+<div  class="lg:flex gap-y-3 gap-x-8">
+   <li data-aos="fade-up" class="text-[#ffffffbf]">About</li>
+   <li data-aos="fade-up" class="text-[#ffffffbf]">Contact</li>
+</div>
+       </ul>
+       <div>
+           <h1 data-aos="fade" class="text-2xl text-white font-semibold">About</h1>
+           <p data-aos="fade" class="text-[#ffffffbf] text-justify lg:w-52">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod natus ab impedit nulla minima ex sit dolores iusto rerum architecto dolorem illum, deleniti quam vero. Temporibus aliquam quibusdam quia quasi.</p>
+       </div>
+    </div>
+    <h1 class="text-center text-[#ffffffbf] pt-5">All Right Reseved For Pouya | 2023</h1>
+   </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+    })
+</script>
+
+</html>
